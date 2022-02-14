@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+array spinner_array
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button_count
+id counter_text
+id edit_text
+id spinner_commands
+layout activity_main
+layout spinner_array
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string common_count
+string counter_text
+string edit_text_empty_toast
+string edit_text_error_toast
+string word_count_toast
+string word_punct_toast
+string write_text
+style Theme.Vu_lab2
