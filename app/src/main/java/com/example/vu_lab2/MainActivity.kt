@@ -3,6 +3,7 @@ package com.example.vu_lab2
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
@@ -36,18 +37,16 @@ class MainActivity : AppCompatActivity() {
         button_count.setOnClickListener {
             when {
                 selectedSpinnerChoice == "Count words" -> {
-                    counterValue = CountingActivity().wordCount(textEditorValue)
-                    Toast.makeText(this, getString(R.string.word_count_toast, counterValue),
-                        Toast.LENGTH_SHORT ).show()
+                    counterValue = CountingActivity().wordCount(textEditorValue.toString())
+//                    Toast.makeText(this, getString(R.string.word_count_toast, counterValue),Toast.LENGTH_SHORT ).show()
                     counter_text.text = String.format(getString(R.string.word_count_toast, counterValue))
                 }
                 textEditorValue.isEmpty() || textEditorValue.isNullOrBlank()-> {
                     Toast.makeText(this, R.string.edit_text_empty_toast, Toast.LENGTH_SHORT).show()
                 }
                 selectedSpinnerChoice == "Count punctuation symbols" -> {
-                    counterValue = CountingActivity().punctuationCount(textEditorValue)
-                    Toast.makeText( this, getString(R.string.word_count_toast, counterValue),
-                        Toast.LENGTH_SHORT).show()
+                    counterValue = CountingActivity().punctuationCount(textEditorValue.toString())
+//                    Toast.makeText( this, getString(R.string.word_punct_toast, counterValue),Toast.LENGTH_SHORT).show()
                     counter_text.text = String.format(getString(R.string.word_punct_toast, counterValue))
                 }
                 else -> {
@@ -58,29 +57,3 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class CountingActivity {
-    fun wordCount(stringValue: Editable): Int {
-        val trimmedStr = stringValue.trim()
-        return if (trimmedStr.isEmpty()) {
-            0
-        } else {
-            return trimmedStr.split("\\s+".toRegex()).size
-        }
-    }
-
-    fun punctuationCount(stringValue: Editable): Int {
-        val trimmedStr = stringValue.trim()
-        val punctuation = "[!\\#$%&'()*+,\\-./:;<=>?@\\[\\]^_‘{|}~]"
-        var counterPunct = 0
-        return if (trimmedStr.isEmpty()) {
-            0
-        } else {
-            for (char in trimmedStr) {
-                if (punctuation.contains(char)) {
-                    counterPunct++
-                }
-            }
-            return counterPunct
-        }
-    }
-}
