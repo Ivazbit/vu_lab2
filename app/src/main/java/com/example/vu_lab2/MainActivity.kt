@@ -2,7 +2,6 @@ package com.example.vu_lab2
 
 import android.os.Build
 import android.os.Bundle
-import android.text.Editable
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
@@ -54,33 +53,6 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, R.string.edit_text_error_toast, Toast.LENGTH_SHORT).show()
                 }
             }
-        }
-    }
-}
-
-class CountingActivity {
-    fun wordCount(stringValue: Editable): Int {
-        val trimmedStr = stringValue.trim()
-        return if (trimmedStr.isEmpty()) {
-            0
-        } else {
-            return trimmedStr.split("\\s+".toRegex()).size
-        }
-    }
-
-    fun punctuationCount(stringValue: Editable): Int {
-        val trimmedStr = stringValue.trim()
-        val punctuation = "[!\\#$%&'()*+,\\-./:;<=>?@\\[\\]^_‘{|}~]"
-        var counterPunct = 0
-        return if (trimmedStr.isEmpty()) {
-            0
-        } else {
-            for (char in trimmedStr) {
-                if (punctuation.contains(char)) {
-                    counterPunct++
-                }
-            }
-            return counterPunct
         }
     }
 }
