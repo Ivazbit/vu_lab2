@@ -1,5 +1,6 @@
 package com.example.vu_lab2
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         var selectedSpinnerChoice = ""
         val textEditorValue = edit_text.text
+        var counterValue: Int
 
         spinner_commands.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -27,20 +29,19 @@ class MainActivity : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
-        var counterValue: Int
 
         button_count.setOnClickListener {
             when {
                 selectedSpinnerChoice == String.format(getString(R.string.spinner_count_words)) -> {
                     counterValue = CountingActivity().wordCount(textEditorValue.toString())
-                    counter_text.text = String.format(getString(R.string.word_count_toast, counterValue))
+                    counter_text.text = String.format(getString(R.string.word_count_toast), counterValue)
                 }
                 textEditorValue.isEmpty() || textEditorValue.isNullOrBlank()-> {
                     Toast.makeText(this, R.string.edit_text_empty_toast, Toast.LENGTH_SHORT).show()
                 }
                 selectedSpinnerChoice == String.format(getString(R.string.spinner_count_punctuation)) -> {
                     counterValue = CountingActivity().punctuationCount(textEditorValue.toString())
-                    counter_text.text = String.format(getString(R.string.word_punct_toast, counterValue))
+                    counter_text.text = String.format(getString(R.string.word_punct_toast), counterValue)
                 }
                 else -> {
                     Toast.makeText(this, R.string.edit_text_error_toast, Toast.LENGTH_SHORT).show()

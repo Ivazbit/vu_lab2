@@ -23,6 +23,8 @@ string common_count
 string counter_text
 string edit_text_empty_toast
 string edit_text_error_toast
+string spinner_count_punctuation
+string spinner_count_words
 string word_count_toast
 string word_punct_toast
 string write_text

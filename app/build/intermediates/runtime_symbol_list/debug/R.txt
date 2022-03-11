@@ -3300,10 +3300,12 @@ int string path_password_eye_mask_strike_through 0x7f100083
 int string path_password_eye_mask_visible 0x7f100084
 int string path_password_strike_through 0x7f100085
 int string search_menu_title 0x7f100086
-int string status_bar_notification_info_overflow 0x7f100087
-int string word_count_toast 0x7f100088
-int string word_punct_toast 0x7f100089
-int string write_text 0x7f10008a
+int string spinner_count_punctuation 0x7f100087
+int string spinner_count_words 0x7f100088
+int string status_bar_notification_info_overflow 0x7f100089
+int string word_count_toast 0x7f10008a
+int string word_punct_toast 0x7f10008b
+int string write_text 0x7f10008c
 int style AlertDialog_AppCompat 0x7f110000
 int style AlertDialog_AppCompat_Light 0x7f110001
 int style AndroidThemeColorAccentYellow 0x7f110002

@@ -16,6 +16,8 @@
     <string name="counter_text">Counter results</string>
     <string name="edit_text_empty_toast">Please write something in the edit text</string>
     <string name="edit_text_error_toast">Error appeared please delete edit text and try it again</string>
+    <string name="spinner_count_punctuation">"Count punctuation symbols"</string>
+    <string name="spinner_count_words">"Count words"</string>
     <string name="word_count_toast">Counted words: %d</string>
     <string name="word_punct_toast">Counted punctuations: %d</string>
     <string name="write_text">Write a text here</string>
